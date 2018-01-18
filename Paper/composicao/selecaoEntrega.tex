@@ -43,28 +43,37 @@ As formas de aglomera\c{c}\~oes s\~ao:
 \paragraph{} Podemos exemplicar da seguinte forma: Em um site temos v\'arios elementos, temos o HTML, temos o CSS e temos a media de um v\'ideo qualquer. Podemos separar da seguinte forma temos 3 elementos onde 2 deles s\~ao altamente dependentes(HTML e CSS) e temos u que pode ser diferente em cada regi\~ao do pa\'is que \'e o v\'ideo. Ent\~ao podemos misturar as formas de aglomera\c{c}\~oes, para o HTML e para o CSS agrupamos em conjuntos de objetos, e para o v\'ideo fazemos a aglomera\c{c}\~ao por objeto, j\'a que ser\'a distribu\'ido de maneira independente nos servidores.
 
 \paragraph{} Analisando os tipos se perceber que nenhuma das op\c{c}\~oes s\~ao excludentes entre s\'i. Pode-se combinar quaisquer tipo de distribui\c{c}\~ao e aglomera\c{c}\~ao e tamb\'em. As escolhas v\~ao depender das necessidades de cada aplica\c{c}\~ao.\'E necess\'ario uma an\'alise minuciosa de cada aplica\c{c}\~ao para chegar em um veredito da melhor abordagem.
+\subsubsection{VOD}
 \subsubsection{Exemplo}
+\paragraph{} Agora vamos ilustrar com um exemplo mais pr\'atico. Utilizaremos uma requisi\c{c}\~ao de uma URL de um VOD(Video On Demand) onde a parte de roteamento \'e feita no usu\'ario. A aplica\c{c}\~ao do usu\'ario faz uma requisi\c{c}\~ao \`a CDN e enquanto o cabe\c{c}alho da resposta n\~ao for 200 ele vai ler um campo dentro do cabe\c{c}alho de resposta e fazer uma nova requisi\c{c}\~ao. A figura (FAZER A FIGURA) ilustra a situa\c{c}\~ao.
 
+Como podemos observar na figura \ref{figura:exemplo_vod_1} a aplica\c{c}\~ao manda para o player a url associada ao VOD que \'e respons\'avel por responder com o caminho oficial, ou intermedi\'ario, do manifesto. Na figura \ref{figura:exemplo_vod_1} ele est\'a localizado no campo "play\_info" da requisi\c{c}\~ao.
 \begin{figure}[h]
 \caption{exemplo VOD}
-\includegraphics[width=10cm]{Figuras/exemplo_vod_1.png} 
+\includegraphics[height=9cm]{Figuras/exemplo_vod_1.png} 
 \label{figura:exemplo_vod_1}
 \end{figure}
 
+O player, por sua vez, como respons\'avel por enviar as requisi\c{c}\~oes, envia ao servidor principal a requisi\c{c}\~ao do manifest do VOD que ele quer tocar. Figura \ref{figura:exemplo_vod_2}.
 \begin{figure}[h]
 \caption{exemplo VOD}
-\includegraphics[width=10cm]{Figuras/exemplo_vod_2.png} 
+\includegraphics[height=9cm]{Figuras/exemplo_vod_2.png} 
 \label{figura:exemplo_vod_2}
 \end{figure}
 
+Na figura \ref{figura:exemplo_vod_3} vemos a CDN, que j\'a fez um roteamento para uma outra rede(ou servidor), que retornou com um c\'odigo 302 indicando que o retorno da requisi\c{c}\~ao n\~ao \'e a resposta final. Dentro do cabe\c{c}alho da resposta tem um campo chamado "location" o qual \'e respons\'avel por retornar o endere\c{c}o final (ou intermedi\'ario) para nova requisi\c{c}\~ao. Esse processo ser\'a repetido at\'e o c\'odigo de retorno da requisi\c{c}\~ao for 200.
 \begin{figure}[h]
 \caption{exemplo VOD}
-\includegraphics[width=10cm]{Figuras/exemplo_vod_3.png} 
+\includegraphics[height=9cm]{Figuras/exemplo_vod_3.png} 
 \label{figura:exemplo_vod_3}
 \end{figure}
 
+Ainda na figura \ref{figura:exemplo_vod_3} podemos observar que ele recebe um 200 OK da requisi\c{c}\~ao em seguida do 302 Found. O que simboliza que aquela URL \'e a URL final e o player pode utiliza-la como base do manifesto. 
+
 \begin{figure}[h]
 \caption{exemplo VOD}
-\includegraphics[width=10cm]{Figuras/exemplo_vod_4.png} 
+\includegraphics[height=9cm,left]{Figuras/exemplo_vod_4.png}
 \label{figura:exemplo_vod_4}
 \end{figure}
+
+Em \ref{figura:exemplo_vod_4} vemos o player come\c{c}ando a consumir os "chuncks" e por consequ\^encia tocando o v\'ideo.
