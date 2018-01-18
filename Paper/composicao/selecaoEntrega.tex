@@ -19,18 +19,30 @@
 \label{figura:entrega_conteudo}
 \end{figure}
 \paragraph{}  Nela podemos ver que todo o processo acontece em, basicamente, 5 etapas. (1) o usu\'ario faz uma requisi\c{c}\~ao ao servidor principal, depois, em (2) o servidor principal retornar um html com as principais informa\c{c}\~oes e dispara automaticamente (3) um processo de roteamento (4) para buscar o melhor servidor e retornar (5) para o usu\'ario os conte\'udos.
-\paragraph{} Entretanto h\'a em (4) diversas formas de fazer esse roteamento quanto a distribui\c{c}\~ao do conte\'udo pela rede e quanto a aglomera\c{c}\~ao desse conte\'udo dentro do servidores de cache. Separamos 2 de cada para explicitar melhor.
-\paragraph{} Tipos de distribui\c{c}\~ao:
+\paragraph{} Entretanto h\'a em (4) diversas formas de fazer esse roteamento quanto a distribui\c{c}\~ao do conte\'udo pela rede e quanto a aglomera\c{c}\~ao desse conte\'udo dentro do servidores de cache. 
+\paragraph{} Tipo de distribui\c{c}\~ao nada mais \'e do que a forma como o conte\'udo vai ser disperso na rede, como esse conte\'udo vai se aproximar do n\'o que est\'a mais perto do usu\'ario. 
+
+Os tipos de distribui\c{c}\~ao mais frequentemente utilizados s\~ao:
 \begin{itemize}
-	\item Empirico
+	\item Emp\'irico
 	\item Popularidade
 \end{itemize}
-\paragraph{} Tipos de aglomera\c{c}\~oes:
+
+\paragraph{} Emp\'irico trata, como o pr\'oprio nome diz, de uma forma de distribui\c{c}\~ao sem nenhum conhecimento espec\'ifico a respeito, utilizando-se apenas um conhecimento experimental de onde seria melhor posicionado o conte\'udo.
+\paragraph{} Em um esquema baseado em popularidade a distribui\c{c}\~ao \'e feita conforme a notoriedade. Ou seja, quanto mais a requisi\c{c}\~ao do conte\'udo mais ele vai ficar nos servidores de ponta perto do usu\'ario.
+\paragraph{} Ambos esquemas n\~ao s\~ao necessariamente excludentes, pode-se inicialmente aplicar a forma empir\'ica para gerar dados a respeito da distribui\c{c}\~ao e depois utilizar esses dados para aplicar o modo de popularidade.
+	
+\paragraph{} Tamb\'em existe as formas de aglomera\c{c}\~oes de conte\'udo. Isso existe porque os conte\'udos podem ser conjuntos de objetos ou objetos independentes. 
+As formas de aglomera\c{c}\~oes s\~ao:
 \begin{itemize}
 	\item Objeto
 	\item Conjunto de objetos
 \end{itemize}
 
+\paragraph{} Aglomera\c{c}\~ao por objeto vai juntar os objetos mais selecionados e distribui-los individualmente entre os servidores. J\'a por conjunto de objetos ele vai separa-los em grupos e distribui-los em conjuntos. 
+\paragraph{} Podemos exemplicar da seguinte forma: Em um site temos v\'arios elementos, temos o HTML, temos o CSS e temos a media de um v\'ideo qualquer. Podemos separar da seguinte forma temos 3 elementos onde 2 deles s\~ao altamente dependentes(HTML e CSS) e temos u que pode ser diferente em cada regi\~ao do pa\'is que \'e o v\'ideo. Ent\~ao podemos misturar as formas de aglomera\c{c}\~oes, para o HTML e para o CSS agrupamos em conjuntos de objetos, e para o v\'ideo fazemos a aglomera\c{c}\~ao por objeto, j\'a que ser\'a distribu\'ido de maneira independente nos servidores.
+
+\paragraph{} Analisando os tipos se perceber que nenhuma das op\c{c}\~oes s\~ao excludentes entre s\'i. Pode-se combinar quaisquer tipo de distribui\c{c}\~ao e aglomera\c{c}\~ao e tamb\'em. As escolhas v\~ao depender das necessidades de cada aplica\c{c}\~ao.\'E necess\'ario uma an\'alise minuciosa de cada aplica\c{c}\~ao para chegar em um veredito da melhor abordagem.
 \subsubsection{Exemplo}
 
 \begin{figure}[h]
