@@ -13,9 +13,9 @@
 
 \subsubsection{Partial - site}
 \paragraph{} J\'a redirecionamentos do tipo Partial-sites os servideores principais retornam para o usu\'ario uma parte do conte\'udo e disparam, automaticamente, um algoritmo de roteamento para encontrar o restante da informa\c{c}\~ao e retornar ao usu\'ario. Conforme podemos ver na figura \ref{figura:entrega_conteudo}
-\begin{figure}[h]
+\begin{figure}[H]
 \caption{Entrega de conte\'udo}
-\includegraphics[width=10cm]{Figuras/entrega_conteudo.png} 
+\includegraphics[height=9cm]{Figuras/entrega_conteudo.png} 
 \label{figura:entrega_conteudo}
 \end{figure}
 \paragraph{}  Nela podemos ver que todo o processo acontece em, basicamente, 5 etapas. (1) o usu\'ario faz uma requisi\c{c}\~ao ao servidor principal, depois, em (2) o servidor principal retornar um html com as principais informa\c{c}\~oes e dispara automaticamente (3) um processo de roteamento (4) para buscar o melhor servidor e retornar (5) para o usu\'ario os conte\'udos.
@@ -44,25 +44,32 @@ As formas de aglomera\c{c}\~oes s\~ao:
 
 \paragraph{} Analisando os tipos se perceber que nenhuma das op\c{c}\~oes s\~ao excludentes entre s\'i. Pode-se combinar quaisquer tipo de distribui\c{c}\~ao e aglomera\c{c}\~ao e tamb\'em. As escolhas v\~ao depender das necessidades de cada aplica\c{c}\~ao.\'E necess\'ario uma an\'alise minuciosa de cada aplica\c{c}\~ao para chegar em um veredito da melhor abordagem.
 \subsubsection{VOD}
+\paragraph{VOD - Video on Demand} - Segundo \cite{garfinkle1996video}, \'e um sistema de que proporciona uma interface de comunica\c{c}\~ao com o usu\'ario de produtos dispon\'iveis de uma esta\c{c}\~ao central remota.
+\newline \'E um sistema muito utilizado por operadoras de conte\'udo onde \'e o cliente que decide o hor\'ario que ir\'a consumir determinado conte\'udo.
+\newline Isso permite que pessoas que antes tinham que esperar hor\'ario certo para consumir determinado conte\'udo, agora podem a qualquer momento e em qualquer lugar fazer uso do mesmo. Visto que est\'a dispon\'ivel online.
+\paragraph{Microsoft Smooth Streaming} \'E um sistema de consumo de v\'ideo onde a qualidade do v\'ideo transmitida vai ser definida conforme a qualidade da banda dispon\'ivel. Clientes que possuem alta disponibilidade de banda ter\~ao maior qualidade do v\'ideo. 
+\newline Para conseguir tocar um v\'ideo nesse formato o player do usu\'ario tem que ser capaz de interpretar um manifesto que cont\'em dentro de outras coisas, o caminho de onde est\'a localizado a m\'idia desejada. 
+\newline J\'a para consegui fazer a transi\c{c}\~ao de qualidade o v\'ideo \'e quebrado em pequenos peda\c{c}os chamados de "chuncks". Ent\~ao, conforme \'e verificada um aumento ou decremento da banda dispon\'ivel \'e s\'o o player come\c{c}ar q consumir chuncks de qualidade diferente da atual e assim o usu\'ario j\'a passar\'a v\^e a diferen\c{c}a significante na tela. 
+\newline No artigo \cite{zambelli2009iis} podemos v\^e todas as aplica\c{c}\~oes e implica\c{c}\~oes dessa forma de consumo de m\'idia.
 \subsubsection{Exemplo}
 \paragraph{} Agora vamos ilustrar com um exemplo mais pr\'atico. Utilizaremos uma requisi\c{c}\~ao de uma URL de um VOD(Video On Demand) onde a parte de roteamento \'e feita no usu\'ario. A aplica\c{c}\~ao do usu\'ario faz uma requisi\c{c}\~ao \`a CDN e enquanto o cabe\c{c}alho da resposta n\~ao for 200 ele vai ler um campo dentro do cabe\c{c}alho de resposta e fazer uma nova requisi\c{c}\~ao. A figura (FAZER A FIGURA) ilustra a situa\c{c}\~ao.
 
 Como podemos observar na figura \ref{figura:exemplo_vod_1} a aplica\c{c}\~ao manda para o player a url associada ao VOD que \'e respons\'avel por responder com o caminho oficial, ou intermedi\'ario, do manifesto. Na figura \ref{figura:exemplo_vod_1} ele est\'a localizado no campo "play\_info" da requisi\c{c}\~ao.
-\begin{figure}[h]
+\begin{figure}[H]
 \caption{exemplo VOD}
-\includegraphics[height=9cm]{Figuras/exemplo_vod_1.png} 
+\includegraphics[height=8cm]{Figuras/exemplo_vod_1.png} 
 \label{figura:exemplo_vod_1}
 \end{figure}
 
 O player, por sua vez, como respons\'avel por enviar as requisi\c{c}\~oes, envia ao servidor principal a requisi\c{c}\~ao do manifest do VOD que ele quer tocar. Figura \ref{figura:exemplo_vod_2}.
-\begin{figure}[h]
+\begin{figure}[H]
 \caption{exemplo VOD}
 \includegraphics[height=9cm]{Figuras/exemplo_vod_2.png} 
 \label{figura:exemplo_vod_2}
 \end{figure}
 
 Na figura \ref{figura:exemplo_vod_3} vemos a CDN, que j\'a fez um roteamento para uma outra rede(ou servidor), que retornou com um c\'odigo 302 indicando que o retorno da requisi\c{c}\~ao n\~ao \'e a resposta final. Dentro do cabe\c{c}alho da resposta tem um campo chamado "location" o qual \'e respons\'avel por retornar o endere\c{c}o final (ou intermedi\'ario) para nova requisi\c{c}\~ao. Esse processo ser\'a repetido at\'e o c\'odigo de retorno da requisi\c{c}\~ao for 200.
-\begin{figure}[h]
+\begin{figure}[H]
 \caption{exemplo VOD}
 \includegraphics[height=9cm]{Figuras/exemplo_vod_3.png} 
 \label{figura:exemplo_vod_3}
@@ -70,9 +77,9 @@ Na figura \ref{figura:exemplo_vod_3} vemos a CDN, que j\'a fez um roteamento par
 
 Ainda na figura \ref{figura:exemplo_vod_3} podemos observar que ele recebe um 200 OK da requisi\c{c}\~ao em seguida do 302 Found. O que simboliza que aquela URL \'e a URL final e o player pode utiliza-la como base do manifesto. 
 
-\begin{figure}[h]
+\begin{figure}[H]
 \caption{exemplo VOD}
-\includegraphics[height=9cm,left]{Figuras/exemplo_vod_4.png}
+\includegraphics[height=9cm]{Figuras/exemplo_vod_4.png}
 \label{figura:exemplo_vod_4}
 \end{figure}
 
