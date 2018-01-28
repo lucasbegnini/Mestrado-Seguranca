@@ -52,6 +52,7 @@ As formas de aglomera\c{c}\~oes s\~ao:
 \newline J\'a para consegui fazer a transi\c{c}\~ao de qualidade o v\'ideo \'e quebrado em pequenos peda\c{c}os chamados de "chuncks". Ent\~ao, conforme \'e verificada um aumento ou decremento da banda dispon\'ivel \'e s\'o o player come\c{c}ar q consumir chuncks de qualidade diferente da atual e assim o usu\'ario j\'a passar\'a v\^e a diferen\c{c}a significante na tela. 
 \newline No artigo \cite{zambelli2009iis} podemos v\^e todas as aplica\c{c}\~oes e implica\c{c}\~oes dessa forma de consumo de m\'idia.
 \subsubsection{Exemplo}
+\label{subsubsection:vod_exemplo}
 \paragraph{} Agora vamos ilustrar com um exemplo mais pr\'atico. Utilizaremos uma requisi\c{c}\~ao de uma URL de um VOD(Video On Demand) onde a parte de roteamento \'e feita no usu\'ario. A aplica\c{c}\~ao do usu\'ario faz uma requisi\c{c}\~ao \`a CDN e enquanto o cabe\c{c}alho da resposta n\~ao for 200 ele vai ler um campo dentro do cabe\c{c}alho de resposta e fazer uma nova requisi\c{c}\~ao. A figura (FAZER A FIGURA) ilustra a situa\c{c}\~ao.
 
 Como podemos observar na figura \ref{figura:exemplo_vod_1} a aplica\c{c}\~ao manda para o player a url associada ao VOD que \'e respons\'avel por responder com o caminho oficial, ou intermedi\'ario, do manifesto. Na figura \ref{figura:exemplo_vod_1} ele est\'a localizado no campo "play\_info" da requisi\c{c}\~ao.
