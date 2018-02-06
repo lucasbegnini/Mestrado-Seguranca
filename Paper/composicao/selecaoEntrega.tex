@@ -53,7 +53,13 @@ As formas de aglomera\c{c}\~oes s\~ao:
 \newline No artigo \cite{zambelli2009iis} podemos v\^e todas as aplica\c{c}\~oes e implica\c{c}\~oes dessa forma de consumo de m\'idia.
 \subsubsection{Exemplo}
 \label{subsubsection:vod_exemplo}
-\paragraph{} Agora vamos ilustrar com um exemplo mais pr\'atico. Utilizaremos uma requisi\c{c}\~ao de uma URL de um VOD(Video On Demand) onde a parte de roteamento \'e feita no usu\'ario. A aplica\c{c}\~ao do usu\'ario faz uma requisi\c{c}\~ao \`a CDN e enquanto o cabe\c{c}alho da resposta n\~ao for 200 ele vai ler um campo dentro do cabe\c{c}alho de resposta e fazer uma nova requisi\c{c}\~ao. A figura (FAZER A FIGURA) ilustra a situa\c{c}\~ao.
+\paragraph{} Agora vamos ilustrar com um exemplo mais pr\'atico. Utilizaremos uma requisi\c{c}\~ao de uma URL de um VOD(Video On Demand) onde a parte de roteamento \'e feita no usu\'ario. A aplica\c{c}\~ao do usu\'ario faz uma requisi\c{c}\~ao \`a CDN e enquanto o cabe\c{c}alho da resposta n\~ao for 200 ele vai ler um campo dentro do cabe\c{c}alho de resposta e fazer uma nova requisi\c{c}\~ao. A figura  \ref{figura:vod_redirect_exemple} ilustra a situa\c{c}\~ao.
+
+\begin{figure}[H]
+\caption{Redirecionamento de CDN}
+\includegraphics[width=15cm]{Figuras/vod_redirect_exemple.png} 
+\label{figura:vod_redirect_exemple}
+\end{figure}
 
 Como podemos observar na figura \ref{figura:exemplo_vod_1} a aplica\c{c}\~ao manda para o player a url associada ao VOD que \'e respons\'avel por responder com o caminho oficial, ou intermedi\'ario, do manifesto. Na figura \ref{figura:exemplo_vod_1} ele est\'a localizado no campo "play\_info" da requisi\c{c}\~ao.
 \begin{figure}[H]
