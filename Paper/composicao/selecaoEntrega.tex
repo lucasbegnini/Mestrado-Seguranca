@@ -39,19 +39,20 @@ As formas de aglomera\c{c}\~oes s\~ao:
 	\item Conjunto de objetos
 \end{itemize}
 
-\paragraph{} Aglomera\c{c}\~ao por objeto vai juntar os objetos mais selecionados e distribui-los individualmente entre os servidores. J\'a por conjunto de objetos ele vai separa-los em grupos e distribui-los em conjuntos. 
-\paragraph{} Podemos exemplicar da seguinte forma: Em um site temos v\'arios elementos, temos o HTML, temos o CSS e temos a media de um v\'ideo qualquer. Podemos separar da seguinte forma temos 3 elementos onde 2 deles s\~ao altamente dependentes(HTML e CSS) e temos u que pode ser diferente em cada regi\~ao do pa\'is que \'e o v\'ideo. Ent\~ao podemos misturar as formas de aglomera\c{c}\~oes, para o HTML e para o CSS agrupamos em conjuntos de objetos, e para o v\'ideo fazemos a aglomera\c{c}\~ao por objeto, j\'a que ser\'a distribu\'ido de maneira independente nos servidores.
+\paragraph{} Aglomera\c{c}\~ao por objeto vai juntar os objetos mais selecionados e distribu\'i-los individualmente entre os servidores. J\'a por conjunto de objetos ele vai separ\'a-los em grupos e distribui-los em conjuntos. 
+\paragraph{} Podemos exemplicar da seguinte forma: Em um site temos v\'arios elementos, temos o HTML, temos o CSS e temos a m\'idia de um v\'ideo qualquer. Podemos separar da seguinte forma: temos 3 elementos onde 2 deles s\~ao altamente dependentes(HTML e CSS) e temos u que pode ser diferente em cada regi\~ao do pa\'is, que \'e o v\'ideo. 
+\paragraph{} Ent\~ao podemos misturar as formas de aglomera\c{c}\~oes. Para o HTML e para o CSS agrupamos em conjuntos de objetos; e para o v\'ideo fazemos a aglomera\c{c}\~ao por objeto,j\'a que ser\'a distribu\'ido de maneira independente nos servidores.
 
-\paragraph{} Analisando os tipos se perceber que nenhuma das op\c{c}\~oes s\~ao excludentes entre s\'i. Pode-se combinar quaisquer tipo de distribui\c{c}\~ao e aglomera\c{c}\~ao e tamb\'em. As escolhas v\~ao depender das necessidades de cada aplica\c{c}\~ao.\'E necess\'ario uma an\'alise minuciosa de cada aplica\c{c}\~ao para chegar em um veredito da melhor abordagem.
+\paragraph{} Analisando os tipos,perceber-se que nenhuma das op\c{c}\~oes s\~ao excludentes entre s\'i, pode-se combinar quaisquer tipo de distribui\c{c}\~ao e aglomera\c{c}\~ao e as escolhas v\~ao depender das necessidades de cada aplica\c{c}\~ao.\'E necess\'ario uma an\'alise minuciosa de cada aplica\c{c}\~ao para chegar em um veredito da melhor abordagem.
 \subsubsection{VOD}
 \label{subsec:vod}
 \paragraph{VOD - Video on Demand} - Segundo \cite{garfinkle1996video}, \'e um sistema de que proporciona uma interface de comunica\c{c}\~ao com o usu\'ario de produtos dispon\'iveis de uma esta\c{c}\~ao central remota.
-\newline \'E um sistema muito utilizado por operadoras de conte\'udo onde \'e o cliente que decide o hor\'ario que ir\'a consumir determinado conte\'udo.
-\newline Isso permite que pessoas que antes tinham que esperar hor\'ario certo para consumir determinado conte\'udo, agora podem a qualquer momento e em qualquer lugar fazer uso do mesmo. Visto que est\'a dispon\'ivel online.
+\paragraph{} \'E um sistema muito utilizado por operadoras de conte\'udo onde \'e o cliente quem decide o hor\'ario que ir\'a consumir determinado conte\'udo.
+\paragraph{} Isso permite \`as pessoas que tinham que esperar o hor\'ario certo para consumir determinado conte\'udo, poderem a qualquer momento e em qualquer lugar fazer uso do mesmo.
 \paragraph{Microsoft Smooth Streaming} \'E um sistema de consumo de v\'ideo onde a qualidade do v\'ideo transmitida vai ser definida conforme a qualidade da banda dispon\'ivel. Clientes que possuem alta disponibilidade de banda ter\~ao maior qualidade do v\'ideo. 
-\newline Para conseguir tocar um v\'ideo nesse formato o player do usu\'ario tem que ser capaz de interpretar um manifesto que cont\'em dentro de outras coisas, o caminho de onde est\'a localizado a m\'idia desejada. 
-\newline J\'a para consegui fazer a transi\c{c}\~ao de qualidade o v\'ideo \'e quebrado em pequenos peda\c{c}os chamados de "chuncks". Ent\~ao, conforme \'e verificada um aumento ou decremento da banda dispon\'ivel \'e s\'o o player come\c{c}ar q consumir chuncks de qualidade diferente da atual e assim o usu\'ario j\'a passar\'a v\^e a diferen\c{c}a significante na tela. 
-\newline No artigo \cite{zambelli2009iis} podemos v\^e todas as aplica\c{c}\~oes e implica\c{c}\~oes dessa forma de consumo de m\'idia.
+\paragraph{} Para conseguir tocar um v\'ideo nesse formato o player do usu\'ario tem que ser capaz de interpretar um manifesto que cont\'em dentro de outras coisas, o caminho de onde est\'a localizado a m\'idia desejada. 
+\paragraph{} J\'a para consegui fazer a transi\c{c}\~ao de qualidade o v\'ideo \'e quebrado em pequenos peda\c{c}os chamados de "chuncks". Ent\~ao, conforme \'e verificada um aumento ou decremento da banda dispon\'ivel \'e s\'o o player come\c{c}ar q consumir chuncks de qualidade diferente da atual e assim o usu\'ario j\'a passar\'a v\^e a diferen\c{c}a significante na tela. 
+\paragraph{} No artigo \cite{zambelli2009iis} podemos v\^e todas as aplica\c{c}\~oes e implica\c{c}\~oes dessa forma de consumo de m\'idia.
 \subsubsection{Exemplo}
 \label{subsubsection:vod_exemplo}
 \paragraph{} Agora vamos ilustrar com um exemplo mais pr\'atico. Utilizaremos uma requisi\c{c}\~ao de uma URL de um VOD(Video On Demand) onde a parte de roteamento \'e feita no usu\'ario. A aplica\c{c}\~ao do usu\'ario faz uma requisi\c{c}\~ao \`a CDN e enquanto o cabe\c{c}alho da resposta n\~ao for 200 ele vai ler um campo dentro do cabe\c{c}alho de resposta e fazer uma nova requisi\c{c}\~ao. A figura  \ref{figura:vod_redirect_exemple} ilustra a situa\c{c}\~ao.

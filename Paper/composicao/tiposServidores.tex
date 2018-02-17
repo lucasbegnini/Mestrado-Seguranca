@@ -1,6 +1,7 @@
 \subsection{Tipos de servidores}
 \label{section:tipos_de_servidores}
-Guardadas as devidas configura\c{c}\~oes f\'isicas, tipos de mem\'oria, cpu e etc. H\'a dois poss\'iveis tipos de servidores:
+\paragraph{}
+Guardadas as devidas configura\c{c}\~oes f\'isicas, tipos de mem\'oria, cpu ,entre outros, h\'a dois poss\'iveis tipos de servidores:
 \begin{itemize}
 	\item Servidor de origem
 	\item Servidor de ponta
@@ -11,7 +12,7 @@ Guardadas as devidas configura\c{c}\~oes f\'isicas, tipos de mem\'oria, cpu e et
 \'E ele o respons\'avel por, na aus\^encia da informa\c{c}\~ao perto do cliente, fornecer tudo o que o cliente necessita de informa\c{c}\~ao. E em caso de um primeiro acesso \'e atrav\'es dele que ser\'a feito o interfaceamento entre usu\'ario e conte\'udo.
 \paragraph{}
 H\'a uma necessidade intr\'inseca de que esse servidor tenha excelentes configura\c{c}\~oes f\'isicas e \'otimas regras de seguran\c{c}as, \textit{firewall} incluso, que possam garantir a integridade do sistema mesmo em caso de muitos acessos.
-\paragraph{Servidores de ponta}s\~ao servidores que mais pr\'oximos aos clientes. Parte do conte\'udo do servidor de origem estar\'a replicado nele. Dizemos em parte pois n\~ao sabemos quais pol\'iticas de \textit{cache} que ser\'a adotada pelos criadores da rede. 
+\paragraph{Servidores de ponta}s\~ao servidores que mais pr\'oximos aos clientes. Parte do conte\'udo do servidor de origem estar\'a replicado nele. Dizemos em parte, pois n\~ao sabemos quais pol\'iticas de \textit{cache} que ser\'a adotada pelos criadores da rede. 
 \\
 Podemos ilustr\'a-los conforme a figura \ref{figura:tipos_servidores}.
 \begin{figure}[H]
@@ -20,4 +21,4 @@ Podemos ilustr\'a-los conforme a figura \ref{figura:tipos_servidores}.
 \label{figura:tipos_servidores} 
 \end{figure}
 
-Vale salientar que n\~ao necessariamente esses \textit{status} de ser de ponta ou ser de origem s\~ao imut\'aveis. Em ambientes reais e comerciais um servidor de origem \'e tamb\'em um servidor de ponta para um outro conte\'udo. Visto que a constru\c{c}\~ao de uma CDN para a distribui\c{c}\~ao de um \'unico conte\'udo \'e completamente invi\'avel comercialmente. Logo, h\'a uma multiplexa\c{c}\~ao de finalidades de um mesmo servidor. Isso \'e o respons\'avel por tornar as grandes cdns completamente transparentes geograficamente perante aos seus clientes.
+Vale salientar que n\~ao necessariamente esses \textit{status} de ser de ponta ou ser de origem s\~ao imut\'aveis. Em ambientes reais e comerciais um servidor de origem \'e tamb\'em um servidor de ponta para um outro conte\'udo. Visto que a constru\c{c}\~ao de uma CDN para a distribui\c{c}\~ao de um \'unico conte\'udo \'e completamente invi\'avel comercialmente h\'a de se considerar uma multiplexa\c{c}\~ao de finalidades de um mesmo servidor. Isso \'e o respons\'avel por tornar as grandes cdns completamente transparentes geograficamente perante aos seus clientes.
