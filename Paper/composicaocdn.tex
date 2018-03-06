@@ -1,15 +1,15 @@
 \section{Composi\c{c}\~ao de uma CDN} \label{sec:composicao}
 
 Para entendermos melhor uma CDN precisamos primeiro destrich\'a-la em v\'arios pequenos peda\c{c}os para assim compreende-la em uma maneira global.
-\newline
+
 Uma CDN apesar de abstratamente ser vista como um mecanismo \'unico, pode ser vista tamb\'em como a soma de v\'arios tipos de elementos, v\'arias caracter\'isticas que somadas e configuradas formar\'a um mecanismo \'unico e transparente aos usu\'arios. Caracter\'isticas essas que s\~ao organiza\c{c}\~ao, tipos de servidores, protocolos e tipos de conte\'udo.
 
 \paragraph{Organiza\c{c}\~ao}- Quanto a organiza\c{c}\~ao uma CDN pode ser uma rede unicamente CDN ou uma rede \textit{overlay}, que nada mais \'e que uma rede onde ela tenta abstrai as camadas de redes j\'a existentes(como transporte, redes entre outras) e transforma-l\'a em uma rede puramente CDN.
 
 \paragraph{Tipos de conte\'udos}- Os tipos de conte\'udo que ir\~ao ser transportados dentro da rede s\~ao fundamentais para definir diversos aspectos de configura\c{c}\~oes que ser\~ao utilizadas dentro da rede. Como por exemplo, a forma de Cache que ser\~ao feitas os arquivos ou at\'e mesmo a forma como v\~ao ser distribu\'idos esses mesmos conte\'udos, se ser\~ao distribu\'idos em conjunto ou em partes, como o caso de uma pagina HTML que possui um video para cada regi\~ao do  mundo. 
-\newline
+
 Todos os outros pontos levam em conta primeiro o tipo de conte\'udo para definir quais ser\~ao suas escolhas.
-\newline
+
 Os demais itens ser\~ao tratados nos pr\'oximos pontos. Tipos de servidores em \ref{section:tipos_de_servidores} e protocolos de intera\c{c}\~oes em \ref{section:protocolos_interacoes}
 
 \subimport{composicao/}{tiposServidores}

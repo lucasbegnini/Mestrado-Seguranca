@@ -16,24 +16,24 @@ Os protocolos de intera\c{c}\~oes podem ser divididos em duas partes: Protocolos
 \label{figura:protocolos_interacao_elementos}
 \end{figure}
 
-Dentro dos protocolos de intera\c{c}\~oes dos elementos de rede podemos verificar que cada um possui sua especificidade e funcionalidade bem definida, como podemos ver na figura \ref{figura:protocolos_interacao_elementos} , tentando proteger o n\~ao s\'o a rede mas tamb\'em o usu\'ario, o servidor, os roteadores e a comunica\c{c}\~ao entre os mesmos.
+Dentro dos protocolos de intera\c{c}\~oes dos elementos de rede podemos verificar que cada um possui sua especificidade e funcionalidade bem definida, como podemos ver na figura \ref{figura:protocolos_interacao_elementos} , tentando proteger n\~ao s\'o a rede mas tamb\'em o usu\'ario, o servidor, os roteadores e a comunica\c{c}\~ao entre os mesmos.
 \paragraph{Socks} \'e um protocolo desenhado para um \textit{framework} para aplica\c{c}\~oes cliente-servidor que rodem em TCP ou UDP e utilizem os servi{c}os do \textit{firewall}. Sua principal funcionalidade \'e gerar um t\'unel de comunica\c{c}\~ao seguro entre cliente e servidor.
 \paragraph{NECP} \'e um protocolo leve de comunica\c{c}\~ao que serve para sinalizar o tr\'afico entre os elementos da rede.
-\paragraph{WCCP} serve para itera\c{c}~oes entre roteadores e \textit{web-caches}	e tamb\'em para transporte entre os mesmos.
+\paragraph{WCCP} serve para itera\c{c}\~oes entre roteadores e \textit{web-caches}	e tamb\'em para transporte entre os mesmos.
 
 
 \subsubsection{Intera\c{c}\~oes de cache}
 
 Os protocolos de intera\c{c}\~oes de cache s\~ao protocolos que organizam as trocas de informa\c{c}\~oes entre os servidores, ou seja, \'e ele que dita como ir\'a funcionar a distribui\c{c}\~ao da informa\c{c}\~ao dentro da rede.
-\newline Conforme vimos na figura \ref{figura:tipos_relacionamentos}, e segundo \cite{pathan2007taxonomy}, existem 4 tipos de protocolos aplicados nessa circunst\^ancia como podemos ver na figura \ref{figura:protocolos_interacao_cache}
+ Conforme vimos na figura \ref{figura:tipos_relacionamentos}, e segundo \cite{pathan2007taxonomy}, existem 4 tipos de protocolos aplicados nessa circunst\^ancia como podemos ver na figura \ref{figura:protocolos_interacao_cache}
 \begin{figure}[H]
 \caption{Tipos de protocolos de itera\c{c}\~oes}
 \includegraphics[height=9cm]{Figuras/protocolos_interacoes_cache.png} 
 \label{figura:protocolos_interacao_cache}
 \end{figure}
 
-2 deles s\~ao: HTCP - Hypertext Caching Protocol e ICP - Internet Cache Protocol que s\~ao concorrentes entre s\'i e tem como funcionalidade controlar o fluxo de informa\c{c}\~ao entre os caches. Sendo atrav\'es deles que se controla o que ir\'a para um determinado servidor de ponta, por exemplo. Falaremos mais sobre ambos em \ref{section:HTCP} e \ref{section:ICP} respectivamente.
-\newline Existe tamb\'em os protocolos CARP -  Cache Array Routing Protocol e Cache Digest, tamb\'em concorrentes, servem para controlar o conte\'udo existente dentro de cada servidor e saber onde est\~ao os outros conte\'udos. Falaremos mais sobre ambos em \ref{section:CARP} e \ref{section:Cache Digest} respectivamente.
+Dois deles s\~ao: HTCP - Hypertext Caching Protocol e ICP - Internet Cache Protocol que s\~ao concorrentes entre s\'i e tem como funcionalidade controlar o fluxo de informa\c{c}\~ao entre os caches. Sendo atrav\'es deles que se controla o que ir\'a para um determinado servidor de ponta, por exemplo. Falaremos mais sobre ambos em \ref{section:HTCP} e \ref{section:ICP} respectivamente.
+ Existe tamb\'em os protocolos CARP -  Cache Array Routing Protocol e Cache Digest, tamb\'em concorrentes, servem para controlar o conte\'udo existente dentro de cada servidor e saber onde est\~ao os outros conte\'udos. Falaremos mais sobre ambos em \ref{section:CARP} e \ref{section:Cache Digest} respectivamente.
 
 \subsubsection{HTCP}
 \label{section:HTCP}
@@ -73,7 +73,7 @@ Analisando os dois protocolos HTCP e ICP, podemos fazer um quadro comparativo en
 \subsubsection{CARP}
 \label{section:CARP}
 CARP -  Cache Array Routing Protocol
-\newline Protocolo de armazenamento distribu\'ido baseado em uma lista conhecida de proxies fracamente acoplada e uma fun\c{c}\~ao hash para dividir o espa\c{c}o URL entre esses proxies.
+ Protocolo de armazenamento distribu\'ido baseado em uma lista conhecida de proxies fracamente acoplada e uma fun\c{c}\~ao hash para dividir o espa\c{c}o URL entre esses proxies.
 \begin{itemize}
 \item Cliente HTTP pode enviar requisi\c{c}\~ao \`a qualquer proxy da lista.
 \end{itemize}
